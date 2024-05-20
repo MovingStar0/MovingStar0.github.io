@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollable Sections</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+
+    <link href='../css/map.css' rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+
+    <script src="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- my own  -->
+    <link rel="stylesheet" href="../css/base.css">
+    <script src="../js/base.js"></script>
+
+</head>
+
+<body>
+
+    <nav>
+        <a href="#section0" class="home" style="opacity: 1;">Home</a>
+        <div class="other-links">
+            <a href="#section1">Introduction</a>
+            <a href="#section2">London's Accessibility</a>
+            <a href="#section3">Time map</a>
+            <a href="#section4">Findings</a>
+            <a href="#section5">Conclusion</a>
+            <a href="#section6">Team & References</a>
+        </div>
+    </nav>
+    
+
+    <section id="section0">
+        <div class="main-title" >
+            <p style="margin-top: 0; margin-bottom: 20px; position: relative; font-size: 55px; font-weight: bold; z-index: 20;">Is London A 15-Minute City?</p>
+            <div class="subtitle">
+                <p class="note" style="text-align: center; width: 40%; margin-left: 30%;">
+                    “Urban Future” is all about resilience and sustainability.<br>
+                    We believe creating a 15-minute neighbourhood in which residents can get everything they require within minutes by walking, cycling or on public transport will ultimately improve the quality of life.<br>
+                    Therefore, 15-minute-city concept is the “urban future” trend.  
+                </p>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <section id="section1">
+        <div class="introPage">
+            <iframe src="intro.html" frameborder="0"></iframe>
+        </div>
+    </section>
+
+
+    <section id="section2">
+
+        <div class="sidebar">
+            <h3>Accessibility to Facilities</h3>
+            <p style="font-size: small; color: #909090; text-align: justify;">
+                London's accessibility to facilities by public transport. The choropleth map shows the ratio of number
+                of facilities within a 15-minute walk from each LSOA.
+            </p>
+            <div class="legend-title">FILL COLOR BASED ON</div>
+            <div class="divider"></div>
+
+            <div class="layer">
+                <div class="layer-title">
+                    Employment
+                    <i class="bi bi-eye" id="toggle-map-icon-em" style="cursor: pointer;"></i>
+                </div>
+
+                <ul class="legend-list">
+
+                    <li><span class="legend-circle" style="background-color: #053061;"></span> 0 - 1,000</li>
+                    <li><span class="legend-circle" style="background-color: #2166ac;"></span> 1,000 - 5,000</li>
+                    <li><span class="legend-circle" style="background-color: #4393c3;"></span> 5,000 - 10,000</li>
+                    <li><span class="legend-circle" style="background-color: #92c5de;"></span> 10,000 - 20,000</li>
+                    <li><span class="legend-circle" style="background-color: #fddbc7;"></span> 20,000 - 30,000</li>
+                    <li><span class="legend-circle" style="background-color: #f4a582;"></span> 30,000 - 40,000</li>
+                    <li><span class="legend-circle" style="background-color: #d6604d;"></span> 40,000 - 100,000</li>
+                    <li><span class="legend-circle" style="background-color: #b2182b;"></span> 100,000 - 500,000</li>
+                    <li><span class="legend-circle" style="background-color: #b2182b;"></span> 500,000 - 700,000</li>
+                    <li><span class="legend-circle" style="background-color: #67001f;"></span> 700,000 - 1,000,000</li>
+
+                </ul>
+            </div>
+
+            <div class="layer">
+                <div class="layer-title">
+                    Supermarket
+                    <i class="bi bi-eye-slash" id="toggle-map-icon-retail" style="cursor: pointer; color: #8f8f8f;"></i>
+                </div>
+
+                <ul class="legend-list" style="display: none;">
+                    
+                    <li><span class="legend-circle" style="background-color: #2166ac;"></span> 0</li>
+                    <li><span class="legend-circle" style="background-color: #4393c3;"></span> 1</li>
+                    <li><span class="legend-circle" style="background-color: #92c5de;"></span> 2 - 4</li>
+                    <li><span class="legend-circle" style="background-color: #d1e5f0;"></span> 4 - 6</li>
+                    <li><span class="legend-circle" style="background-color: #fddbc7;"></span> 6 - 8</li>
+                    <li><span class="legend-circle" style="background-color: #ef8a62;"></span> 8 - 10</li>
+                    <li><span class="legend-circle" style="background-color: #b2182b;"></span> 10 +</li>
+
+
+                </ul>
+            </div>
+
+            <div class="layer">
+                <div class="layer-title">
+                    Hospital
+                    <i class="bi bi-eye-slash" id="toggle-map-icon-hosp" style="cursor: pointer; color: #8f8f8f;"></i>
+                </div>
+                <ul class="legend-list" style="display: none;">
+
+                    <li><span class="legend-circle" style="background-color: #4575b4;"></span> 0</li>
+                    <li><span class="legend-circle" style="background-color: #91bfdb;"></span> 1</li>
+                    <li><span class="legend-circle" style="background-color: #e0f3f8;"></span> 2</li>
+                    <li><span class="legend-circle" style="background-color: #ffffbf;"></span> 3 - 5</li>
+                    <li><span class="legend-circle" style="background-color: #fee090;"></span> 5 - 7</li>
+                    <li><span class="legend-circle" style="background-color: #fc8d59;"></span> 7 - 10</li>
+                    <li><span class="legend-circle" style="background-color: #d73027;"></span> 10 + </li>
+                </ul>
+            </div>
+
+            <div class="layer">
+                <div class="layer-title">
+                    Gp
+                    <i class="bi bi-eye-slash" id="toggle-map-icon-gp" style="cursor: pointer; color: #8f8f8f;"></i>
+                </div>
+                <ul class="legend-list" style="display: none;">
+
+                    <li><span class="legend-circle" style="background-color: #4575b4;"></span> 0 - 2</li>
+                    <li><span class="legend-circle" style="background-color: #91bfdb;"></span> 2 - 4</li>
+                    <li><span class="legend-circle" style="background-color: #e0f3f8;"></span> 4 - 6</li>
+                    <li><span class="legend-circle" style="background-color: #ffffbf;"></span> 6 - 8</li>
+                    <li><span class="legend-circle" style="background-color: #fee090;"></span> 8 - 10</li>
+                    <li><span class="legend-circle" style="background-color: #fc8d59;"></span> 10 - 12</li>
+                    <li><span class="legend-circle" style="background-color: #d73027;"></span> 12 + </li>
+                </ul>
+            </div>
+
+            <div class="layer">
+                <div class="layer-title">
+                    School - primary
+                    <i class="bi bi-eye-slash" id="toggle-map-icon-schp" style="cursor: pointer; color: #8f8f8f;"></i>
+                </div>
+
+                <ul class="legend-list" style="display: none;">
+                    <li><span class="legend-circle" style="background-color: #542788;"></span> 0 - 2</li>
+                    <li><span class="legend-circle" style="background-color: #998ec3;"></span> 2 - 4</li>
+                    <li><span class="legend-circle" style="background-color: #d8daeb;"></span> 4 - 6</li>
+                    <li><span class="legend-circle" style="background-color: #f7f7f7;"></span> 6 - 8</li>
+                    <li><span class="legend-circle" style="background-color: #fee0b6;"></span> 8 - 10</li>
+                    <li><span class="legend-circle" style="background-color: #f1a340;"></span> 10 - 12</li>
+                    <li><span class="legend-circle" style="background-color: #b35806;"></span> 12 + </li>
+                </ul>
+            </div>
+
+            <div class="layer">
+                <div class="layer-title">
+                    School - secondary
+                    <i class="bi bi-eye-slash" id="toggle-map-icon-schs" style="cursor: pointer; color: #8f8f8f;"></i>
+                </div>
+
+                <ul class="legend-list" style="display: none;">
+                    <li><span class="legend-circle" style="background-color: #542788;"></span> 0 </li>
+                    <li><span class="legend-circle" style="background-color: #998ec3;"></span> 1 </li>
+                    <li><span class="legend-circle" style="background-color: #d8daeb;"></span> 2 </li>
+                    <li><span class="legend-circle" style="background-color: #fee0b6;"></span> 3 </li>
+                    <li><span class="legend-circle" style="background-color: #f1a340;"></span> 4 </li>
+                    <li><span class="legend-circle" style="background-color: #b35806;"></span> 5 +</li>
+                </ul>
+
+            </div>
+
+
+            <h6>Data: <a href="https://www.nature.com/articles/s41597-023-02890-w">
+                    Public transport accessibility indicators to urban and regional services in Great Britain</a>.</h6>
+
+        </div>
+
+        <div id="map"></div>
+
+        <div id="chartContainer" style="width: 310px; height: 200px; position: absolute;">
+            <canvas id="myChart"></canvas>
+        </div>
+
+
+    </section>
+
+    
+    <section id="section3">
+        <div id="myModal" class="modal">
+            <iframe src="TM.html" frameborder="0"></iframe>
+        </div>
+    </section>
+
+
+    <section id="section4">
+        <div class="summaryPage">
+            <iframe src="summary.html" frameborder="0" id="sum"></iframe>
+    </section>
+
+
+    <section id="section5">
+
+        <div class="conclusion">
+            <iframe src="conclusion.html" frameborder="0"></iframe>
+        </div>
+                
+        
+        
+    </section>
+
+    <section id="section6">
+        <div class="reference">
+            <h2>References</h2>
+            Allam, Z., Bibri, S.E., Chabaud, D. and Moreno, C., 2022. The ‘15-Minute City’concept can shape a net-zero urban future. Humanities and Social Sciences Communications, 9(1), pp.1-5.<br>
+            Barbieri, L., D’Autilia, R., Marrone, P. and Montella, I. (2023). ‘Graph Representation of the 15-Minute City: A Comparison between Rome, London, and Paris’. Sustainability, 15 (4), p. 3772. doi: 10.3390/su15043772.<br>
+            Cycling Benefit (Future.Green, 2024): https://www.future.green/futureblog/save-carbon-biking.<br>
+            Khavarian-Garmsir, A.R., Sharifi, A., Hajian Hossein Abadi, M. and Moradi, Z., 2023. From Garden City to 15-Minute City: A historical perspective and critical assessment. Land, 12(2), p.512.<br>
+            Moreno, C., Allam, Z., Chabaud, D., Gall, C. and Pratlong, F., 2021. Introducing the “15-Minute City”: Sustainability, resilience and place identity in future post-pandemic cities. Smart cities, 4(1), pp.93-111.<br><br>
+        
+            <h2>About us</h2>
+        </div>
+
+        <div class="team" >
+            <div class="row" style="font-size: small; color: #053061;">
+                <div class="col-lg-4 text-center">
+                    <img src="../image/Picture1.jpg" class="bd-placeholder-img rounded-circle d-block mx-auto" width="160" height="160" alt="描述">
+                    <h4>Xinyu Wu</h4>
+                        <i class="fab fa-instagram"></i> : wupapa23</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img src="../image/Picture2.jpg" class="bd-placeholder-img rounded-circle d-block mx-auto" width="160" height="160" alt="描述">
+                    <h4>Shijie Wang</h4>
+                        <i class="fab fa-instagram"></i> : Shijie_Wang1011 </p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img src="../image/Picture3.jpg" class="bd-placeholder-img rounded-circle d-block mx-auto" width="160" height="160" alt="描述">
+                    <h4>Chenxi Yan</h4>
+                  <i class="fab fa-instagram"></i> : persia.yan </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-text">
+            <p style="font-size: 20px; margin-top: 40px;">CASA Group 2, 2024</p>
+        </div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+<script src="../js/map.js"></script>
+
+</html>

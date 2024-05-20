@@ -1,0 +1,276 @@
+section {
+    position: relative; /* 确保 section 具有相对定位 */
+    border-width: 40px 20px; /* 上下 40px，左右 20px */
+    border-style: solid; /* 确保边框为实线 */
+    border-color: #333; /* 边框颜色 */
+    box-sizing: border-box; /* 边框和内填充包含在宽度和高度内 */
+    z-index: 100;
+    background-color: #ffffff;
+}
+
+#section0 {
+    border: none; /* 移除id为section0的元素的边框 */
+    background-image: url('../image/1.jpg'); /* 设置背景图片 */
+    background-size: cover; /* 覆盖整个section，不重复 */
+    background-position: center; /* 图片居中显示 */
+    background-repeat: no-repeat; /* 不重复背景图 */
+    color: rgb(255, 255, 255); /* 设置文字颜色 */
+    padding-top: 70px; /* 顶部填充 */
+}
+
+#section0 .note {
+    position: relative;
+    font-size: 14px; /* 注释文字的大小 */
+    color: rgb(226, 226, 226); /* 可以选择一种较淡的颜色以区分注释和主文字 */
+    margin-top: 0; /* 在主文字和注释之间添加一些空间 */
+    margin-left: 25%;
+    width: 50%;
+    z-index: 20;
+    text-align: justify; /* 添加对齐方式为两侧对齐 */
+}
+
+#section0::before {
+    content: ''; /* 伪元素必须有content属性 */
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 顶部对齐 */
+    left: 0; /* 左侧对齐 */
+    width: 100%; /* 宽度为父元素的100% */
+    height: 100%; /* 高度为父元素的100% */
+    background: rgba(0, 0, 0, 0.5); /* 黑色背景，50% 透明度 */
+    z-index: 1; /* 保证覆盖层位于内容之下 */
+}
+
+.radarpage {
+    position: absolute;
+    left: 20px;   /* 从左边界偏移 */
+    bottom: 20px;
+    background-color: white; /* 设置背景色确保图表可读 */
+    height: 40%;
+    width: 50%;
+}
+
+.radar-chart-container { 
+    display: flex; 
+    overflow-x: scroll; 
+    padding: 10px; 
+    background-color: #ffffff;
+    height: 30%; 
+}
+
+.radar-canvas-wrap {  
+    flex: 0 0 auto;
+    padding: 5px; 
+    color:#333;
+    position: relative;  /* 设置父容器为相对定位 */
+    width: 300px;        /* 可根据实际需要调整 */
+    height: 300px;       /* 可根据实际需要调整 */
+    justify-content: center; /* 水平居中内容 */
+}
+
+.radar-canvas-wrap h6 {
+    position: absolute;  /* 设置 h6 为绝对定位 */
+    top: 0;           /* 顶部偏移，可根据需要调整 */
+    left: 0;          /* 左侧偏移，可根据需要调整 */
+    width: 80%;
+    z-index: 10;         /* 确保 h6 在 canvas 上方 */
+    background: rgba(255, 255, 255, 1); /* 可选：为了更好的可读性，给 h6 添加半透明背景 */
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;        /* 添加一些内边距 */
+    border-radius: 5px;  /* 可选：圆角边框 */
+    color: #333;         /* 字体颜色 */
+    font-size: 1em;      /* 字体大小 */
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+.radar-canvas-wrap canvas {
+    position: absolute;  /* 同样设置 canvas 为绝对定位 */
+    top: 0;              /* 与父容器顶部对齐 */
+    left: 0;             /* 与父容器左侧对齐 */
+    width: 100%;         /* 填满父容器宽度 */
+    height: 100%;        /* 填满父容器高度 */
+}
+
+
+#scrollable-section { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+}
+
+#map {
+    width: 100%; /* 地图容器宽度为 100% */
+    height: 100%; /* 地图容器高度为 100% */
+    position: absolute; /* 绝对定位确保填满 section */
+    top: 0;
+    left: 0;
+    z-index: 900;
+}
+
+#legend {
+    z-index: 1000;
+}
+
+.sidebar {
+    position: absolute; /* 绝对定位 */
+    right: 0;            /* 位置靠最左 */
+    top: 0;             /* 位置靠顶部 */
+    z-index: 1100;     /* 确保它在大多数元素之上 */
+    width: 22%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* 使得padding包含在宽度范围内 */
+    background-color: rgba(235, 235, 235, 0.8); /* 修改背景颜色和透明度 */
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: large;
+    color: #333;
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    margin-top: 10px; /* 移除默认的顶部间距 */
+    margin-bottom: 5px; /* 移除默认的底部间距 */
+}
+
+.divider {
+    height: 1px; /* 横线高度 */
+    width: 100%; /* 使其与侧边栏宽度一致 */
+    background-color: #8f8f8f; /* 横线颜色 */
+    margin-top: 10px; /* 你可以根据需要调整间距 */
+    margin-bottom: 10px;
+}
+
+.layer {
+    border-bottom: 1px solid #bcbcbc; /* 或其他颜色 */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    color: #333;
+    font-size: large;
+}
+
+.layer-title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: medium;
+}
+
+.sub-info {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.legend-title {
+    font-size: 10px;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.legend-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.legend-list li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.legend-circle {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+#toggle-map-icon-em {
+    cursor: pointer;
+    padding: 5px; /* 为图标增加一些内边距，以便更容易点击 */
+    border-radius: 5px; /* 给图标方框一些圆角样式 */
+    transition: background-color 0.2s; /* 平滑过渡效果 */
+}
+
+#toggle-map-icon-em:hover {
+    background-color: #d3d3d3; /* 悬停时背景变暗 */
+}
+
+#toggle-map-icon-retail {
+    cursor: pointer;
+    padding: 5px; /* 为图标增加一些内边距，以便更容易点击 */
+    border-radius: 5px; /* 给图标方框一些圆角样式 */
+    transition: background-color 0.2s; /* 平滑过渡效果 */
+}
+
+#toggle-map-icon-retail:hover {
+    background-color: #d3d3d3; /* 悬停时背景变暗 */
+}
+
+#toggle-map-icon-gp {
+    cursor: pointer;
+    padding: 5px; /* 为图标增加一些内边距，以便更容易点击 */
+    border-radius: 5px; /* 给图标方框一些圆角样式 */
+    transition: background-color 0.2s; /* 平滑过渡效果 */
+}
+
+#toggle-map-icon-gp:hover {
+    background-color: #d3d3d3; /* 悬停时背景变暗 */
+}
+
+#toggle-map-icon-hosp {
+    cursor: pointer;
+    padding: 5px; /* 为图标增加一些内边距，以便更容易点击 */
+    border-radius: 5px; /* 给图标方框一些圆角样式 */
+    transition: background-color 0.2s; /* 平滑过渡效果 */
+}
+
+#toggle-map-icon-hosp:hover {
+    background-color: #d3d3d3; /* 悬停时背景变暗 */
+}
+
+#toggle-map-icon-schp {
+    cursor: pointer;
+    padding: 5px; /* 为图标增加一些内边距，以便更容易点击 */
+    border-radius: 5px; /* 给图标方框一些圆角样式 */
+    transition: background-color 0.2s; /* 平滑过渡效果 */
+}
+
+#toggle-map-icon-schp:hover {
+    background-color: #d3d3d3; /* 悬停时背景变暗 */
+}
+
+#toggle-map-icon-schs {
+    cursor: pointer;
+    padding: 5px; /* 为图标增加一些内边距，以便更容易点击 */
+    border-radius: 5px; /* 给图标方框一些圆角样式 */
+    transition: background-color 0.2s; /* 平滑过渡效果 */
+}
+
+#toggle-map-icon-schs:hover {
+    background-color: #d3d3d3; /* 悬停时背景变暗 */
+}
+
+#chartContainer {
+    display: flex;
+    justify-content: center;  /* 水平居中 */
+    align-items: center;
+    left: 5px;   /* 从左边界偏移 */
+    bottom: 5px; /* 从底部偏移 */
+    z-index: 1100;
+    background-color: white; /* 设置背景色确保图表可读 */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* 可选：添加阴影提升视觉效果 */
+}
+
+

@@ -1,0 +1,265 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: #333;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    opacity: 0.5;
+}
+
+nav a.active {
+    opacity: 1;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    /* 100% of the viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+/* LimeGreen */
+#section4 {
+    background: #ffa500;
+}
+
+/* Orange */
+
+
+
+
+/* 定义 section1 的样式 */
+#section1 {
+    position: relative;
+    /* 设为相对定位的容器 */
+    width: 100%;
+    /* 固定宽度，可根据需求调整 */
+    height: 105vh;
+    /* 固定高度，可根据需求调整 */
+    /* margin: 10px auto; */
+    /* 居中显示 */
+    overflow: hidden;
+    /* 防止内部元素溢出 */
+    background-color: #333;
+    /* 可选，设置背景色 */
+}
+
+.introPage{
+    display: block;
+    position: absolute;
+    /* 绝对定位，相对于最近的相对定位的父元素 */
+    width: 99%;
+    /* 占 section3 宽度的百分比 */
+    height: 99%;
+    /* 占 section3 高度的百分比 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 阴影效果 */
+    z-index: 1000;
+    /* 确保它位于其他内容之上 */
+    margin-top: 160px;
+}
+
+#section1 iframe {
+    width: 100%;
+    height: 90%;
+    border-radius: 20px;
+}
+
+
+
+/* 定义 section3 的样式 */
+#section3 {
+    position: relative;
+    /* 设为相对定位的容器 */
+    width: 100%;
+    /* 固定宽度，可根据需求调整 */
+    height: 1000px;
+    /* 固定高度，可根据需求调整 */
+    overflow: hidden;
+    /* 防止内部元素溢出 */
+    background-color: #333;
+    /* 可选，设置背景色 */
+
+}
+
+/* 确保 model 类的模态窗口相对于 section3 定位 */
+.modal {
+    display: block;
+    position: absolute;
+    /* 绝对定位，相对于最近的相对定位的父元素 */
+    width: 99%;
+    /* 占 section3 宽度的百分比 */
+    height: 99%;
+    /* 占 section3 高度的百分比 */
+    /* 内边距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 阴影效果 */
+    z-index: 1000;
+    /* 确保它位于其他内容之上 */
+    margin-top: 160px;
+}
+
+#section3 iframe {
+    width: 100%;
+    height: 50%;
+    border-radius: 20px;
+}
+
+/* 样式用于关闭按钮 */
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#section3 iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* 禁用 */
+.body-no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+.modal-content {
+    overflow-y: auto;
+    /* 允许垂直滚动 */
+    max-height: 90vh;
+    /* 限制最大高度，90%的视窗高度 */
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home {
+    font-weight: bold;
+}
+
+.other-links {
+    display: flex;
+    gap: 20px; /* 设置其他链接之间的间距 */
+}
+
+/* 可以根据需要添加其他样式 */
+
+
+/* section 4 */
+#section4 {
+    background-color: rgb(244, 244, 244);
+    width: 100%;
+    height: 100vh;
+}
+
+.summaryPage {
+    display: block;
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* margin-top: 160px; */
+}
+
+#section4 iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+#section5 {
+    background-color: rgb(244, 244, 244);
+    width: 100%;
+    height: 100vh;
+}
+.conclusion {
+    display: block;
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* margin-top: 160px; */
+}
+#section5 iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+
+#section6 {
+    background-color: rgb(244, 244, 244);
+    width: 100%;
+    height: 100vh;
+    display: flex;      /* 启用Flexbox */
+    flex-direction: column; /* 垂直堆叠子元素 */
+    justify-content: center; /* 垂直居中子元素 */
+}
+
+/* 这里可以添加自定义样式 */
+#section6 .team {
+    background-color: #f8f9fa; /* 浅灰色背景 */
+    width: 60%;
+    margin-left: auto;  /* 使其在容器中居中 */
+    margin-right: auto; /* 使其在容器中居中 */
+    padding-top: 20px;
+    margin-top: 20px;
+    border-radius: 10px 15px 20px 25px; /* 设置圆角 */
+}
+
+#section6 .reference {
+    text-align: justify;
+    color: #053061;
+    font-size: small;
+    width: 60%;
+}
+
+#section6 .footer-text {
+    position: absolute; /* 绝对定位 */
+    bottom: -80px; /* 定位到父容器的底部 */
+    left: 0;
+    width: 100%; /* 宽度扩展到整个容器宽度 */
+    height: 100px; /* 文本区域的高度 */
+    background-color: rgb(247, 167, 167); /* 设置背景颜色为黑色 */
+    color: white; /* 设置文本颜色为白色 */
+    text-align: center; /* 文本居中 */
+    line-height: 20px; /* 线高与区域高度一致以垂直居中文本 */
+    z-index: 10; /* 确保文本在其他内容上方 */
+}
